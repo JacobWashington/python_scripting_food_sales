@@ -26,31 +26,44 @@ def write_only():
 #     txt = f.read()
 #     print(txt)
 
+# def read_food_sales():
+#     all_dates = []
+#     with open('sampledatafoodsales.csv') as f:
+#         data = f.readlines()
+#         for food_sale in data:
+#             split_food_sale = food_sale.split(',')
+#             # print(split_food_sale)
+#             order_date = split_food_sale[0]
+#             all_dates.append(order_date)
+#     print(all_dates)
+
+#     with open('dates.txt', 'w') as f:
+#         for date in all_dates:
+#             f.write(date)
+#             f.write('\n')
+
+# def append_text():
+#     ''' append data to an existing file '''
+#     with open('dates.txt', 'a') as f:
+#         f.write('01/03/1993')
+#         print('done')
+
 def read_food_sales():
-    all_dates = []
+    regions = []
     with open('sampledatafoodsales.csv') as f:
         data = f.readlines()
         for food_sale in data:
             split_food_sale = food_sale.split(',')
             # print(split_food_sale)
-            order_date = split_food_sale[0]
-            all_dates.append(order_date)
-    print(all_dates)
-
-    with open('dates.txt', 'w') as f:
-        for date in all_dates:
-            f.write(date)
-            f.write('\n')
-
-def append_text():
-    ''' append data to an existing file '''
-    with open('dates.txt', 'a') as f:
-        f.write('01/03/1993')
-        print('done')
+            region = split_food_sale[1]
+            regions.append(region)
+    print(regions)
 
 
 if __name__ == '__main__':
     #      read_only()
     #      write_only()
     # read_food_sales()
-    append_text()
+    # append_text()
+    read_food_sales()
+
